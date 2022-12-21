@@ -22,8 +22,17 @@ class Navbar extends React.Component {
      })
     }
 
+    page1 = () =>{
+        console.log("page1")
+        this.props.PageNumber(1)
+    }
+    page2 = () =>{
+        console.log('page2')
+        this.props.PageNumber(2)
+    }
+
     render () {
-        if (window.innerWidth > 768) {this.showNavbarItems()}
+       
 
         const Items = this.state.showNavbarItems? " NavbarItems show" :'NavbarItems'
         return (
@@ -37,10 +46,10 @@ class Navbar extends React.Component {
     </div>
 
   <nav className={Items}>
-    <div className="NavbarLink">
+    <div className="NavbarLink" onClick={this.page1}>
        Plots
     </div>
-    <div className="NavbarLink">
+    <div className="NavbarLink" onClick={this.page2}>
      Requests
     </div>
 

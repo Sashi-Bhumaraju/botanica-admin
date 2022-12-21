@@ -1,0 +1,19 @@
+.PlotsList {
+    margin-top: 60px;
+    height: 100vh;
+    display: flex;
+    width: 100vw;
+   justify-content: center;
+
+  
+}
+
+.PlotsListBody {
+    /* width: 1000px; */
+    max-width: 1000px;
+    /* background-color: red; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -1,6 +1,9 @@
 .LoginPage {
     display: flex;
     flex-direction: row;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .LoginShowacase {

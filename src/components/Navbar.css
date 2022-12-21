@@ -3,14 +3,23 @@
     background-color:  #20232a;
     /* background-color: rgba(0, 0, 0, 0.0); */
     display: flex;
-    justify-content: space-around;
-    padding: 16px;
+    /* justify-content: space-around; */
+    padding: 16px 0px;
     font-family: sans-serif;
+    position: fixed;
+    width: 100vw;
     color: black;
     font-family: 'Lato';
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding-left: 100px;
-    padding-right: 100px;
+    /* padding-left: 100px;
+    padding-right: 100px; */
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+   
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
     /* font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; */
   }
 
@@ -19,6 +28,7 @@
     font-weight: 800;
     font-size: 20px;
     color: rgb(0, 255, 0);  
+      margin-left: 100px;
 
   }
   .NavbarLink {
@@ -32,6 +42,7 @@
     margin-left:auto;
     width: 300px;
     justify-content: space-around;
+    margin-right: 100px;
   }
  
   .NavbarLinkToggle {
@@ -41,8 +52,10 @@
     padding-right: 8px;
     color: white;
     font-size: 18px;
-    color:red;
+    color:#BB000E;
     cursor: pointer;
+   
+   
 }
 
 .NavbarItemsShow {
@@ -53,6 +66,7 @@
      /* padding-left: 10px; */
      margin: 10px;
      margin: 20px 10px;
+
 }
 
   @media only screen and (max-width: 768px) {
@@ -64,6 +78,10 @@
        align-items: flex-start;
       padding-left: 10px;
       padding-right: 20px;
+    }
+
+    .Brand{
+        margin-left: 5px;
     }
   .NavbarItems {
       display:none;
@@ -90,17 +108,23 @@
   }
   .NavbarLinkToggle {
       display: flex;
-      padding-right: 8px;
+      /* padding-right: 8px; */
       color: white;
-      font-size: 18px;
+    
       width: 20px;
       height: fit-content;
+      margin-right: 20px;
+      /* background-color: #BB000E; */
     }
 
   .NavbarLinkToggle {
-      align-self: flex-end;
-      display: initial;
-      position: absolute;
+    
+   
+      position: fixed;
       cursor: pointer;
+      display: flex;
+      right: 5px;
+      /* padding-right: 8px; */
+     
      } 
   }
