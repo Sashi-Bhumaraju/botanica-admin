@@ -1,0 +1,59 @@
+.LoginPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.LoginShowacase {
+    width: 50%;
+    height: 100vh;
+    object-fit:cover;
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    filter: blur(1px);
+}
+.Login {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.LoginHeading {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+    width: 240px;
+    /* background-color: aquamarine; */
+    text-align: left;
+    
+
+}
+
+.LoginText {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px;
+    width: 240px;
+    /* background-color: aquamarine; */
+    text-align: left;
+
+}
+
+@media screen and (max-width: 850px) {
+    .LoginShowacase {
+      visibility: hidden;
+      display: none;
+    }
+
+    .Login {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+  }
