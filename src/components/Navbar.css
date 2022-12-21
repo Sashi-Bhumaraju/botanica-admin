@@ -16,7 +16,7 @@
     /* position: fixed; */
     left: 0;
     top: 0;
-   
+    /* height: 50px; */
     -webkit-user-select: none;
     -ms-user-select: none; 
     user-select: none; 
@@ -25,19 +25,24 @@
 
   .Brand {
 
+   
     font-weight: 800;
     font-size: 20px;
     color: rgb(0, 255, 0);  
+    margin: 15px;
       margin-left: 100px;
+    
 
   }
   .NavbarLink {
+   
     padding-right: 8px;
     color: white;
     font-size: 18px;
     cursor: pointer;
   }
   .NavbarItems {
+    margin: 15px;
     display: flex;
     margin-left:auto;
     width: 300px;
@@ -49,6 +54,7 @@
     display: none;
   }
 .SignOut {
+
     padding-right: 8px;
     color: white;
     font-size: 18px;
@@ -81,7 +87,9 @@
     }
 
     .Brand{
+        margin: 0px;
         margin-left: 5px;
+
     }
   .NavbarItems {
       display:none;

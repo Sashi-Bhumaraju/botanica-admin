@@ -5,7 +5,7 @@ import showcase from "../assets/showcase.png"
 import googleOneTap from "google-one-tap";
 import {  GoogleAuthProvider, signInWithPopup, signInWithRedirect,signOut,onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase-config";
-import AdminEmail from "../services/plots-data.services.js"
+import AdminEmail from "../services/admin-email.services.js"
 import { async } from "@firebase/util";
 import Loader from './Loader'
 
@@ -105,7 +105,8 @@ class Login extends React.Component {
         const alert = this.state.error? <div className="error"> select valid admin email to login </div> : ''
         const ele = this.state.loading? <Loader></Loader> :<>  <img className="LoginShowacase" src="https://source.unsplash.com/random/?botanica"></img>   
         <div className="Login"> 
-          <div className="LoginHeading">Login</div>
+         <div className="LoginHeading">Botanica</div>
+          {/* <div className="LoginHeading">Login</div> */}
           <GoogleButton style={{backgroundColor: '#20232a'}} onClick={this.googleSignIn}></GoogleButton>
           {alert}
           <div className="LoginText">Only silpa raghava botanica admins can login here</div>
