@@ -1,0 +1,106 @@
+
+.Navbar {
+    background-color:  #20232a;
+    /* background-color: rgba(0, 0, 0, 0.0); */
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    font-family: sans-serif;
+    color: black;
+    font-family: 'Lato';
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    /* font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; */
+  }
+
+  .Brand {
+
+    font-weight: 800;
+    font-size: 20px;
+    color: rgb(0, 255, 0);  
+
+  }
+  .NavbarLink {
+    padding-right: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .NavbarItems {
+    display: flex;
+    margin-left:auto;
+    width: 300px;
+    justify-content: space-around;
+  }
+ 
+  .NavbarLinkToggle {
+    display: none;
+  }
+.SignOut {
+    padding-right: 8px;
+    color: white;
+    font-size: 18px;
+    color:red;
+    cursor: pointer;
+}
+
+.NavbarItemsShow {
+    display: flex ;
+    flex-direction: column;
+    justify-content:flex-start;
+     align-items: flex-start;
+     /* padding-left: 10px; */
+     margin: 10px;
+     margin: 20px 10px;
+}
+
+  @media only screen and (max-width: 768px) {
+    
+    .Brand,
+    .Navbar {
+      flex-direction: column;
+      justify-content:flex-start;
+       align-items: flex-start;
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+  .NavbarItems {
+      display:none;
+    
+      flex-direction: column;
+      justify-content:flex-start;
+       align-items: flex-start;
+       /* padding-left: 10px; */
+       margin: 10px;
+       margin: 20px 10px;
+    }
+
+.show{
+    display: flex;
+}
+   .SignOut{
+    margin: 5px 0px;
+   }
+ .NavbarLink {
+    padding-right: 8px;
+    color: white;
+    font-size: 18px;
+    margin: 5px 0px;
+  }
+  .NavbarLinkToggle {
+      display: flex;
+      padding-right: 8px;
+      color: white;
+      font-size: 18px;
+      width: 20px;
+      height: fit-content;
+    }
+
+  .NavbarLinkToggle {
+      align-self: flex-end;
+      display: initial;
+      position: absolute;
+      cursor: pointer;
+     } 
+  }
