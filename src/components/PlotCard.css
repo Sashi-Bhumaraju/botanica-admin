@@ -43,8 +43,8 @@
 
 .plotNumberBody{
     background-color: rgb(255, 213, 0);
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@
    
 }
 .PlotElementHeading{
-    font-size: 14px;
+    font-size: 2px;
     letter-spacing: 0.8px;
     /* text-transform: uppercase; */
     /* text-align: left; */
@@ -81,7 +81,7 @@
    
 }
 .PlotStatusElementHeading{
-    font-size: 14px;
+    font-size: 2px;
     letter-spacing: 0.8px;
     /* text-transform: uppercase; */
     /* text-align: left; */
@@ -112,6 +112,7 @@
     cursor: pointer;
     /* align-self:flex-start; */
     width: 20%;    
+    height: 10px;
     /* padding: auto;   */
     padding: 0px 5px;
     height: 40px;
@@ -119,7 +120,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 1px;
-    margin: 0px 10px;
+    margin: 0px 20px;
     float: right;
 
     
