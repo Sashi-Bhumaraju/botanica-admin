@@ -108,7 +108,7 @@ handleSearch = (evt) => {
                     <div className="search"> <input type="search" name="search" id="search" value={this.state.search} placeholder="search with plot number" onChange={this.handleSearch}></input>    </div>
                 
                 <> {this.state.plotsMapListData.map((v)=>{
-              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available} ></PlotCard>
+              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available}   ></PlotCard>
        })}</>
                 </div>
             </div>
