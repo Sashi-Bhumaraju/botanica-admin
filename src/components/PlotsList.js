@@ -4,6 +4,10 @@ import './PlotsList.css';
 import plotsDataServices
  from "../services/plots-data.service";
  import Loader from './Loader'
+import { async } from "@firebase/util";
+import { TwitterAuthProvider } from "firebase/auth";
+import LoaderC from "./LoaderC";
+
 
 class PlotsList extends React.Component {
 
@@ -19,7 +23,8 @@ class PlotsList extends React.Component {
             plotsMapListData : [],
             tempPlotsMapListData : [],
             updated: true,
-            search:""
+            search:"",
+            isLoading : false
 
         }
     }
@@ -52,6 +57,8 @@ class PlotsList extends React.Component {
                     setTimeout(()=> {
                         this.setState({
                             tempPlotsMapListData : this.state.plotsMapListData,
+                            isLoading : false
+                           
                             // updated : false
                         })
                       },2000)
@@ -60,22 +67,6 @@ class PlotsList extends React.Component {
                 catch (err) {
                        console.log("check your internet connetion")
                 }
-                
-              
-            // }      
-            // else 
-            // {
-            //     console.log('llllllll',"yers")
-            //    setTimeout(()=>{
-            //     this.setState({
-            //         plotsMapListData : JSON.parse(plots),
-            //         updated : false
-            //     })
-            //    },2000)
-             
-
-            
-            // }
         }
 
 
@@ -98,21 +89,17 @@ handleSearch = (evt) => {
 
 makeSearch = (g) => {
    
-    
+   
     
     var k =  this.state.plotsMapListData.filter((v)=>{
-        // console.log(v.name,this.state.search)
           if(v.name.localeCompare(g) === 0)
           {
             return v;
-            console.log(",,,,,,,,,,")
           } 
         return           })
         if(k.length === 0){
             this.setState({
                tempPlotsMapListData :this.state. plotsMapListData,
-            //    search : '',
-
             })
             return
        }
@@ -120,33 +107,54 @@ makeSearch = (g) => {
            console.log(k)
 
            this.setState(()=>({
-            tempPlotsMapListData : k
+            tempPlotsMapListData : k,
+          
          }) )
 }
+
+     changePlotAvailability = async (plotNum) => {
+
+      this.setState({
+        isLoading : true
+      })
+            var tempPlotsData = this.state.plotsMapListData.map((plotObj)=>{
+                if(plotObj.name.localeCompare(plotNum) === 0)
+                {
+                  return {...plotObj, available : !plotObj.available}
+                } 
+                return plotObj;
+            })
+
+            var A = {
+                'plots' : [...tempPlotsData]
+            }
+            console.log(A);
+
+          await plotsDataServices.updatePlotsData('jmsdc1RhDPrwoFBa7yZC',A);
+          this.getPlotsData();
+    
+     }
+
+
+
+
 
     render () {
 
 
-        // const PlotsList =<> {this.state.plotsMapListData.map((v)=>{
-        //      console.log(v.name)
-        // })}</>
+        const loading = (this.state.isLoading)? <LoaderC></LoaderC> : ''
         return (
          
-              (this.state.tempPlotsMapListData.length == 0)?
+              (this.state.tempPlotsMapListData.length == 0 )?
            <Loader></Loader> 
            :
-        
-        
-
-
-
-        
             <div className="PlotsList">
+                {loading}
                 <div className="PlotsListBody">
                     <div className="search"> <input autoComplete="off" type="search" name="search" id="search" value={this.state.search} placeholder="search with plot number" onChange={this.handleSearch}></input>    </div>
                 
                 <> {this.state.tempPlotsMapListData.map((v)=>{
-              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available}   ></PlotCard>
+              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available}  changePlotAvailability={this.changePlotAvailability}  ></PlotCard>
        })}</>
                 </div>
             </div>

@@ -43,6 +43,7 @@
     cursor: pointer;
   }
   .NavbarItems {
+   
     margin: 15px;
     display: flex;
     margin-left:auto;
@@ -107,13 +108,14 @@
     display: flex;
 }
    .SignOut{
-    margin: 5px 0px;
+    margin: 10px 5px;
    }
  .NavbarLink {
     padding-right: 8px;
     color: white;
     font-size: 18px;
-    margin: 5px 0px;
+    margin: 10px 5px;
+   
   }
   .NavbarLinkToggle {
       display: flex;

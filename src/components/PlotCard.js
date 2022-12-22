@@ -9,13 +9,14 @@ class PlotCard extends React.Component {
         Facing : 'east',
         Dimension : '0',
         Size:'0',
-     
+        buttonText : 'change'
     }
 
     constructor(props) {
         super(props)
         this.state = {
-            showModal : false
+            showModal : false,
+        
         }
     }
 
@@ -31,12 +32,16 @@ class PlotCard extends React.Component {
         } )
     }
 
- 
+ handleChangePlotAvailability = async () => {
+   
+  await  this.props.changePlotAvailability(this.props.PlotNum);
+
+ }
 
     render(){
         const status = this.props.Available? <div className="available">Available</div>  : <div className="sold">Sold</div>
         const PlotcardClass = "PlotCard";
-        const request =<div className="requestButton" onClick={this.openModal}>Change</div> 
+        const request =<div className="requestButton" onClick={this.handleChangePlotAvailability}>{this.props.buttonText}</div> 
         // const modal = this.state.showModal? <Modal plotNumber={this.props.PlotNum} closeModalFuntion = {this.closeModal} ></Modal> : ''
         return(
             <>
