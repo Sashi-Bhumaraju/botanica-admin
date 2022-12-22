@@ -6,6 +6,7 @@
     /* justify-content: space-around; */
     padding: 16px 0px;
     font-family: sans-serif;
+    z-index: 20;
     position: fixed;
     width: 100vw;
     color: black;

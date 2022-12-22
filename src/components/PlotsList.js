@@ -17,7 +17,8 @@ class PlotsList extends React.Component {
             // showCard:false,
             // formPlotNum:0,
             plotsMapListData : [],
-            updated: true
+            updated: true,
+            search:""
         }
     }
 
@@ -79,6 +80,11 @@ putToDatabase = () => {
 
 }
 
+handleSearch = (evt) => {
+   this.setState({
+    search : evt.value
+   })
+}
 
     render () {
 
@@ -99,6 +105,8 @@ putToDatabase = () => {
         
             <div className="PlotsList">
                 <div className="PlotsListBody">
+                    <div className="search"> <input type="search" name="search" id="search" value={this.state.search} placeholder="search with plot number" onChange={this.handleSearch}></input>    </div>
+                
                 <> {this.state.plotsMapListData.map((v)=>{
               return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available} ></PlotCard>
        })}</>
