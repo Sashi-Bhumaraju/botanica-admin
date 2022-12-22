@@ -40,10 +40,12 @@ class PlotsList extends React.Component {
                     temp = data.docs.map((doc) => ({...doc.data()}))
                     temp2 = temp.map((doc)=>doc.plots)
                  console.log(temp2[0])
+
+                 var  temp3 = temp2[0].sort((a,b)=>{return +a.name -  +b.name})
                     // sessionStorage.setItem("plots", JSON.stringify(temp2[0]));
                     setTimeout(()=> {
                         this.setState({
-                            plotsMapListData : temp2[0],
+                            plotsMapListData : temp3,
                             // updated : false
                         })
                       },2000)
