@@ -11,10 +11,12 @@
 .PlotsListBody {
     /* width: 1000px; */
     max-width: 1000px;
+    width: 100%;
     /* background-color: red; */
 
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
     justify-content: center;
    height: 100%;
 }

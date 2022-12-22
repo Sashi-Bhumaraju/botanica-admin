@@ -132,8 +132,28 @@
     font-size: 13px;
     border-radius: 60px;
 
-    
+
+
+    text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 20%;  
+  will-change: transform;
+  width: 110px;
+  height: 30px;
+  margin: 0px 20px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.requestButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
 /* @media screen and (max-width: 1125px) {
     .PlotCard{
         height: 250px;
