@@ -48,10 +48,10 @@ class PlotCard extends React.Component {
                         {/* <div className="PlotElementHeading">Plot No</div> */}
                       <div className="plotNumberBody">{this.props.PlotNum}</div> 
                         </div>
-                    <div className="plotElement"> 
+                    {/* <div className="plotElement"> 
                         <div className="PlotElementHeading">Facing    </div>
                         <div className="PlotElementBody">{this.props.Facing}</div>
-                        </div>
+                        </div> */}
                     {/* <div className="plotElement"> 
                         <div className="PlotElementHeading">Dimensions</div>
                         <div className="PlotElementBody">{this.props.Dimension}</div>
@@ -61,7 +61,7 @@ class PlotCard extends React.Component {
                         <div className="PlotElementBody">{this.props.Size}</div>
                         </div> */}
                         <div className="plotStausElement"> 
-                        <div className="PlotStatusElementHeading">Status      </div>
+                        {/* <div className="PlotStatusElementHeading">Status      </div> */}
                         <div className="PlotStatusElementBody">{status}</div>
                   </div>
                   {request}
