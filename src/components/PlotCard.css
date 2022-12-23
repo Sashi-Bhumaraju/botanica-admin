@@ -14,7 +14,7 @@
     border-radius: 1px;
     /* flex-direction: row; */
     /* height: 40px; */
-    margin: 1px 2px;
+    margin: 0.5px 2px;
 
 }
 
@@ -28,7 +28,7 @@
     /* margin: 20px; */
     flex-direction: row;
     width: 100%;
-    height: 50px;
+    height: 70px;
     /* margin: 10px 0px; */
     
 }
@@ -39,7 +39,7 @@
     
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     color: black;
     /* border-radius: 50%; */
     height: 100%;
@@ -48,14 +48,19 @@
 }
 
 .plotNumberBody{
-    background-color: rgb(255, 213, 0);
-    height: 100%;
-    width: 100%;
+    /* background-color: rgb(146, 122, 0); */
+    background-color:rgb(234, 180, 16);
+   
+    height: calc(100% - 20px);
+    aspect-ratio: 1/1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;
+    /* margin-right: 2px yellow; */
+    border-right: 2px solid rgb(255, 213, 0);
+    border-radius: 50%;
 }
 
 .plotElement{
@@ -115,7 +120,7 @@
 
 .requestButton {
     
-    background: #1d366a;
+    background: #050e21;
     color: #fff;
     border: 0;
     cursor: pointer;
@@ -164,7 +169,7 @@
         overflow-x: hidden;
     }
   } */
-  @media screen and (max-width: 400px) {
+  /* @media screen and (max-width: 400px) {
     .image-container{
 
       width: calc(100vw - 50px);
@@ -175,4 +180,4 @@
     margin-bottom: 10px;
   }
 
-  }
+  } */
