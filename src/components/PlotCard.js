@@ -9,7 +9,7 @@ class PlotCard extends React.Component {
         Facing : 'east',
         Dimension : '0',
         Size:'0',
-        buttonText : 'change'
+        buttonText : 'Change'
     }
 
     constructor(props) {

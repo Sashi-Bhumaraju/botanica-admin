@@ -25,10 +25,16 @@ class Navbar extends React.Component {
     page1 = () =>{
         console.log("page1")
         this.props.PageNumber(1)
+        this.setState({
+            showNavbarItems : !this.state.showNavbarItems
+         })
     }
     page2 = () =>{
         console.log('page2')
         this.props.PageNumber(2)
+        this.setState({
+            showNavbarItems : !this.state.showNavbarItems
+         })
     }
 
     render () {

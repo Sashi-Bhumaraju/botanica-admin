@@ -5,8 +5,8 @@
     color:white;
     /* position: flex; */
     /* overflow: hidden; */
-    padding: 12px 0px;
-    margin: 0;
+    /* padding: 12px 0px; */
+   
     outline: none;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -14,6 +14,7 @@
     border-radius: 1px;
     /* flex-direction: row; */
     /* height: 40px; */
+    margin: 2px 2px;
 
 }
 
@@ -27,7 +28,7 @@
     /* margin: 20px; */
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 50px;
     /* margin: 10px 0px; */
     
 }
@@ -35,25 +36,25 @@
 .plotNumber{
     /* width: 25%; */
     /* background-color: rgb(255, 213, 0); */
-   
+    
     display: flex;
     align-items: center;
     justify-content: left;
     color: black;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    height: 100%;
+    width: 20%;
     
 }
 
 .plotNumberBody{
     background-color: rgb(255, 213, 0);
-    height: 47px;
-    width: 47px;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: black;
-    border-radius: 50%;
-    margin: 0px 20px;
     font-weight: bold;
 }
 
@@ -101,6 +102,7 @@
     /* text-align: left; */
     color: #ffd56d;
     text-align: left;
+    letter-spacing: 2px;
 }
 
 .sold{
@@ -113,28 +115,24 @@
 
 .requestButton {
     
-    background: #5685e7;
+    background: #1d366a;
     color: #fff;
     border: 0;
     cursor: pointer;
-    /* align-self:flex-start; */
     width: 20%;    
     height: 10px;
-    /* padding: auto;   */
     padding: 0px 5px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1px;
     margin: 0px 20px;
     float: right;
     font-size: 13px;
-    border-radius: 60px;
 
 
 
-    text-align: center;
+  text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
@@ -145,10 +143,12 @@
   width: 110px;
   height: 30px;
   margin: 0px 20px;
-  
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 2px;
+  letter-spacing: 1px;
+
 }
 .requestButton:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
