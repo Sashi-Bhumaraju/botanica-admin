@@ -1,6 +1,8 @@
 import React from "react";
 import './RequestCard.css';
 import  deleteIcon from '../assets/delete.svg'
+import AlertBox from "./AlertBox";
+import { async } from "@firebase/util";
 
 class RequestCard extends React.Component {
 
@@ -10,11 +12,30 @@ class RequestCard extends React.Component {
         phone : '0',
         name:'0',
     }
+    constructor(props) {
+        super(props);
+        this.state = {
+            showAlert : false
+        }
+    }
+
+    showAlert = (isShowAlert) => {
+        this.setState({
+            showAlert : isShowAlert
+        })
+    }
+
+    handleDeleteRequest = async () => {
+      await  this.props.deleteRequest(this.props.plotNumber,this.props.phone);
+       this.showAlert(false);
+    }
 
     render(){
         const PlotcardClass = "RequestCard";
+        const alertBox = this.state.showAlert? <AlertBox message = {'Customer request is permanently deleted'} feedbackFuntion={this.handleDeleteRequest} showAlert = {this.showAlert}></AlertBox> : ''
         return(
             <>
+            {alertBox}
             <div className={PlotcardClass}>
                 <div className="RequestBody">
                     <div className="RequestPlotNumber"> 
@@ -27,7 +48,7 @@ class RequestCard extends React.Component {
                         <div className="RequestDataBody phone">{this.props.phone}</div>
                     </div>
                     <div className="Delete">
-                    <img className="DeleteBody" src={deleteIcon} onClick={()=>this.props.deleteRequest(this.props.plotNumber,this.props.phone)}></img>
+                    <img className="DeleteBody" src={deleteIcon} onClick={()=>{this.showAlert(true)}}></img>
                     </div>
                   
                   </div>
