@@ -7,8 +7,8 @@ class Loader extends React.Component{
         return (
             <div className="Loader">
                 <div className="loader-wrapper">
-                    <div className="loader"></div>
-                    <img className="LoaderImage" src={logo}></img>
+                    <div className="loader-x"></div>
+                    {/* <img className="LoaderImage" src={logo}></img> */}
                     
                 </div>
                

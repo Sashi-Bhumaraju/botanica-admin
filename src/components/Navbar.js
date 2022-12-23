@@ -38,7 +38,7 @@ class Navbar extends React.Component {
         return (
             <div className="Navbar">
    <div className="Brand">
-      Botanica
+     Botanica
     </div>
 
     <div className="NavbarLinkToggle" onClick={this.showNavbarItems}>

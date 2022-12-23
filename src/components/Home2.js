@@ -2,7 +2,7 @@ import React from "react";
 import './Home2.css';
 import Navbar from "./Navbar";
 import PlotsList from "./PlotsList";
-import Request from './Request'
+import Request from './RequestList'
 
 class Home2 extends React.Component {
     constructor(props) {
