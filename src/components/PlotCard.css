@@ -14,7 +14,7 @@
     border-radius: 1px;
     /* flex-direction: row; */
     /* height: 40px; */
-    margin: 2px 2px;
+    margin: 1px 2px;
 
 }
 
@@ -102,7 +102,7 @@
     /* text-align: left; */
     color: #ffd56d;
     text-align: left;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
 }
 
 .sold{
@@ -146,8 +146,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 2px;
+  border-radius: 60px;
   letter-spacing: 1px;
+
 
 }
 .requestButton:hover {
