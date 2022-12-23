@@ -7,7 +7,8 @@ class Navbar extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            showNavbarItems : false
+            showNavbarItems : false,
+            activeColor :  true
         }
     }
 
@@ -26,19 +27,23 @@ class Navbar extends React.Component {
         console.log("page1")
         this.props.PageNumber(1)
         this.setState({
-            showNavbarItems : !this.state.showNavbarItems
+            showNavbarItems : !this.state.showNavbarItems,
+            activeColor:true
          })
     }
     page2 = () =>{
         console.log('page2')
         this.props.PageNumber(2)
         this.setState({
-            showNavbarItems : !this.state.showNavbarItems
+            showNavbarItems : !this.state.showNavbarItems,
+            activeColor:false
          })
     }
 
     render () {
        
+         const page1Color  = this.state.activeColor? '#1DA1F2' : 'white'
+         const page2Color  = this.state.activeColor?  'white' : '#1DA1F2'
 
         const Items = this.state.showNavbarItems? " NavbarItems show" :'NavbarItems'
         return (
@@ -47,15 +52,15 @@ class Navbar extends React.Component {
      Botanica
     </div>
 
-    <div className="NavbarLinkToggle" onClick={this.showNavbarItems}>
+    <div className="NavbarLinkToggle"  onClick={this.showNavbarItems}>
     <img className="NavbarLinkToggle" src={burger}></img>
     </div>
 
   <nav className={Items}>
-    <div className="NavbarLink" onClick={this.page1}>
+    <div className="NavbarLink" onClick={this.page1} style={{color : page1Color} }>
        Plots
     </div>
-    <div className="NavbarLink" onClick={this.page2}>
+    <div className="NavbarLink" onClick={this.page2} style={{color : page2Color}}>
      Requests
     </div>
 

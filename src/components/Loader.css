@@ -17,7 +17,7 @@
 }
 
 .loader-x {
-  border: 3px solid rgb(21, 255, 0);
+  border: 3px solid #1DA1F2;
   border-top: 5px solid rgb(0, 0, 0);
   border-radius: 50%;
   width: 50px;

@@ -29,7 +29,8 @@
    
     font-weight: 800;
     font-size: 23px;
-    color: rgb(0, 255, 0);  
+    color : #61dafb; 
+    color :  #1DA1F2;
     margin: 15px;
       margin-left: 100px;
     
@@ -60,7 +61,7 @@
     padding-right: 8px;
     color: white;
     font-size: 18px;
-    color:#BB000E;
+    color: red;
     cursor: pointer;
    
    
