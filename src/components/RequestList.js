@@ -111,7 +111,7 @@ makeSearch = (g) => {
             <div className="PlotsList">
                 {loading}
                 <div className="PlotsListBody">
-                    <div className="search"> <input autoComplete="off" autoFocus type="search" name="search" id="search" value={this.state.search} placeholder="search your plot number" onChange={this.handleSearch}></input>    </div>
+                    <div className="search"> <input autoComplete="off"  type="search" name="search" id="search" value={this.state.search} placeholder="search your plot number" onChange={this.handleSearch}></input>    </div>
                
                 <> {this.state.tempRequestListData.map((v)=>{
               return  <RequestCard plotNumber = {v.plotNumber}  name={v.name} email={v.email} phone={v.phone} ></RequestCard>
