@@ -15,13 +15,15 @@ class Request extends React.Component {
             tempRequestListData : [],
             updated: true,
             search:"",
+            isDeleting : false,
             isLoading : false
 
         }
     }
 
         componentDidMount() {
-          
+           
+            this.setState({isLoading : true})
            this.getRequestData();
         }
 
@@ -33,25 +35,26 @@ class Request extends React.Component {
                     var    temp = data[0].requests.sort((a,b)=>{return +a.plotNumber -  +b.plotNumber})
                     this.setState({
                         requestListData : temp,
-                        tempRequestListData : temp
+                        tempRequestListData : temp,
+                        isLoading : false
                     })                   
                 }
                 catch (err) {
+                    this.setState({isLoading : false})
                        console.log("check your internet connetion")
                 }
         }
 
 
-handleSearch = (evt) => {
-  
-   this.setState(()=>({
-    search : evt.target.value
-   }))
- this.makeSearch(evt.target.value);
-}
+        handleSearch = (evt) => {
+        
+        this.setState(()=>({
+            search : evt.target.value
+        }))
+        this.makeSearch(evt.target.value);
+        }
 
-makeSearch = (g) => {
-   
+    makeSearch = (g) => {
     var k =  this.state.requestListData.filter((v)=>{
           if(v.plotNumber.localeCompare(g) === 0)
           {
@@ -62,21 +65,19 @@ makeSearch = (g) => {
             this.setState({
                tempRequestListData :this.state. requestListData,
             })
-            return
-       }
-       
-           console.log(k)
+            return}
 
+           console.log(k)
            this.setState(()=>({
             tempRequestListData : k,
           
          }) )
-}
+    }
 
      changePlotAvailability = async (plotNum) => {
 
       this.setState({
-        isLoading : true
+        isDeleting : true
       })
             var tempPlotsData = this.state.requestListData.map((plotObj)=>{
                 if(plotObj.name.localeCompare(plotNum) === 0)
@@ -97,25 +98,41 @@ makeSearch = (g) => {
      }
 
 
+    deleteRequest = async (plotNumber,phone)  => {
+        var newRequestArray =  this.state.requestListData.filter((request) => {
+            if(request.plotNumber.localeCompare(plotNumber) !== 0 || request.phone.localeCompare(phone) !== 0) {
+                   return request;
+            }
+           })
+        var newRequestArrayObject = {
+            'requests' : [...newRequestArray]
+            }
+
+        console.log(newRequestArrayObject)
+       await  RequestsDataService.updateRequestsData('tjepwaktliW5sPtRxDYz',newRequestArrayObject);
+       await  this.getRequestData();
+    }
+
 
 
 
     render () {
 
 
-        const loading = (this.state.isLoading)? <LoaderC></LoaderC> : ''
+        const loading = (this.state.isDeleting)? <LoaderC></LoaderC> : ''
         return (
          
-              (this.state.tempRequestListData.length == 0 )?
+              (this.state.isLoading)?
           <Loader></Loader>
            :
+           (this.state.requestListData.length === 0)? <div className='EmptyRequests'><div>Empty Requests!</div> </div> :
             <div className="PlotsList">
                 {loading}
                 <div className="PlotsListBody">
                     <div className="search"> <input autoComplete="off"  type="search" name="search" id="search" value={this.state.search} placeholder="search your plot number" onChange={this.handleSearch}></input>    </div>
                
                 <> {this.state.tempRequestListData.map((v)=>{
-              return  <RequestCard plotNumber = {v.plotNumber}  name={v.name} email={v.email} phone={v.phone} ></RequestCard>
+              return  <RequestCard plotNumber = {v.plotNumber}  name={v.name} email={v.email} phone={v.phone} deleteRequest={this.deleteRequest} ></RequestCard>
        })}</>
                 </div>
                

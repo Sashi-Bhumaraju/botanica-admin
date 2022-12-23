@@ -27,7 +27,7 @@ class RequestCard extends React.Component {
                         <div className="RequestDataBody phone">{this.props.phone}</div>
                     </div>
                     <div className="Delete">
-                    <img className="DeleteBody" src={deleteIcon}></img>
+                    <img className="DeleteBody" src={deleteIcon} onClick={()=>this.props.deleteRequest(this.props.plotNumber,this.props.phone)}></img>
                     </div>
                   
                   </div>
