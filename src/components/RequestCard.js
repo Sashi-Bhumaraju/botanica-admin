@@ -1,5 +1,6 @@
 import React from "react";
 import './RequestCard.css';
+import  deleteIcon from '../assets/delete.svg'
 
 class RequestCard extends React.Component {
 
@@ -25,6 +26,10 @@ class RequestCard extends React.Component {
                         <div className="RequestDataBody email">{this.props.email}</div>
                         <div className="RequestDataBody phone">{this.props.phone}</div>
                     </div>
+                    <div className="Delete">
+                    <img className="DeleteBody" src={deleteIcon}></img>
+                    </div>
+                  
                   </div>
             </div>
             </> 

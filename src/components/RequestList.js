@@ -28,11 +28,12 @@ class Request extends React.Component {
         getRequestData = async () => {     
                 try{
                     var snapshots =  await  RequestsDataService.getAllRequestsData();
-                    var data = snapshots.docs.map((data)=>data.data().requests);
+                    var data = snapshots.docs.map((data)=>data.data());
                     console.log(data)
+                    var    temp = data[0].requests.sort((a,b)=>{return +a.plotNumber -  +b.plotNumber})
                     this.setState({
-                        requestListData : data[0],
-                        tempRequestListData : data[0]
+                        requestListData : temp,
+                        tempRequestListData : temp
                     })                   
                 }
                 catch (err) {
