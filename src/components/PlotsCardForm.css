@@ -56,10 +56,10 @@ form {
     margin: 0px;
     height: 33.8px;
     margin: 3px 0px;
-    background-color: rgb(37, 36, 45); 
+    background-color: #20232a;
      color : white;
      /* outline: none; */
-     border: 1px solid  rgba(29, 160, 242, 0);
+     border: 1px solid  #20232a;
 }
 
 /* input {

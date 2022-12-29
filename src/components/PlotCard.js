@@ -40,7 +40,7 @@ class PlotCard extends React.Component {
 
     closeModal = () => {
         this.setState({
-            showModal : false
+            showModal : this.props.PlotCardFormShow
         } )
     }
     handleToggle = () => {
@@ -54,9 +54,10 @@ class PlotCard extends React.Component {
  }
 
     render(){
+        const pcf =  <PlotCardForm PlotNum={this.props.PlotNum} Facing={this.props.Facing} Dimension={this.props.Dimension} Size={this.props.Size} handleToggle={this.handleToggle} changePlotData={this.props.changePlotData} getPlotsData={this.props.getPlotsData} plotsMapListData={this.props.plotsMapListData} ></PlotCardForm>;
         const status = this.props.Available? <div className="available">Available</div>  : <div className="sold">Sold</div>
         const PlotcardClass = "PlotCard";
-        const PlotsCardF = this.state.showMore? <PlotCardForm PlotNum={this.props.PlotNum} Facing={this.props.Facing} Dimension={this.props.Dimension} Size={this.props.Size} handleToggle={this.handleToggle} changePlotData={this.props.changePlotData} getPlotsData={this.props.getPlotsData} plotsMapListData={this.props.plotsMapListData} ></PlotCardForm> : '';
+        const PlotsCardF = this.state.showMore? pcf : '';
         // const request =<div className="requestButton" onClick={this.handleChangePlotAvailability}>{this.props.buttonText}</div> 
         const request =      <div className="switch"   onClick={this.handleChanged}>
         <input
