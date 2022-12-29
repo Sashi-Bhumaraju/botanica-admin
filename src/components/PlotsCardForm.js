@@ -48,7 +48,7 @@ class PlotCardForm extends React.Component {
     this.setState({
         isLoading : true
       })
-      
+
     this.changePlotData(this.props.PlotNum,this.state.facing,this.state.dimension,this.state.size);
     this.props.getPlotsData();
     setTimeout(()=> this.props.handleToggle(),2000)
@@ -57,9 +57,9 @@ class PlotCardForm extends React.Component {
   render() {
     const l = this.state.isLoading? <Loader></Loader> : '';
     const comp = this.state.isLoading? <div className='Loading'></div> : <> <form onSubmit={this.handleSubmit}>
-                        <div className='PlotCardFormBody'> <input className='PlotCardFormInput' type="text" name="facing" placeholder='Facing' value={this.state.facing} onChange={this.handleChange} /></div>
-                        <div className='PlotCardFormBody'> <input className='PlotCardFormInput' type="text" name="dimension" placeholder='Dimension' value={this.state.dimension} onChange={this.handleChange} /></div>
-                        <div className='PlotCardFormBody'> <input className='PlotCardFormInput' type="text" name="size" placeholder='Size' value={this.state.size} onChange={this.handleChange} /></div>
+                        <div className='PlotCardFormBody'> <input autocomplete="off"  className='PlotCardFormInput' type="text" name="facing" placeholder='Facing' value={this.state.facing} onChange={this.handleChange} /></div>
+                        <div className='PlotCardFormBody'> <input autocomplete="off"  className='PlotCardFormInput' type="text" name="dimension" placeholder='Dimension' value={this.state.dimension} onChange={this.handleChange} /></div>
+                        <div className='PlotCardFormBody'> <input autocomplete="off"  className='PlotCardFormInput' type="text" name="size" placeholder='Size' value={this.state.size} onChange={this.handleChange} /></div>
                         {/* <button type="submit">Submit</button> */}
                     </form>
                     <div className="Buttons">

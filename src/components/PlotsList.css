@@ -31,8 +31,8 @@ input {
     box-sizing: border-box;
     /* margin: 10px; */
     /* margin: 15px; */
-    border-radius: 60px;
-
+    border-radius: 2px;
+    
   
 
     }
@@ -51,6 +51,7 @@ input:focus  {
  .search {
     position: fixed;
     background-color: #000000;
+    /* background-color: red; */
     width: 100vw;
     z-index: 1;
     top: 90px;
