@@ -68,30 +68,20 @@ class PlotCard extends React.Component {
          
             <div className={PlotcardClass}>
                 <div className="PlotBody">
+
                     <div className="plotNumber"> 
-                        {/* <div className="PlotElementHeading">Plot No</div> */}
                       <div className="plotNumberBody">{this.props.PlotNum}</div> 
-                        </div>
-                    {/* <div className="plotElement"> 
-                        <div className="PlotElementHeading">Facing    </div>
-                        <div className="PlotElementBody">{this.props.Facing}</div>
-                        </div> */}
-                    {/* <div className="plotElement"> 
-                        <div className="PlotElementHeading">Dimensions</div>
-                        <div className="PlotElementBody">{this.props.Dimension}</div>
-                        </div> */}
-                    {/* <div className="plotElement"> 
-                        <div className="PlotElementHeading">Size      </div>
-                        <div className="PlotElementBody">{this.props.Size}</div>
-                        </div> */}
-                        <div className="plotStausElement"> 
-                        {/* <div className="PlotStatusElementHeading">Status      </div> */}
+                    </div>
+
+                    <div className="plotStausElement"> 
                         <div className="PlotStatusElementBody">{status}</div>
-                  </div>
-                  {request}
-                  <div className="Pen">
-                  <img className="PenBody" src={pen}></img>
-                  </div>
+                    </div>
+
+                    {request}
+
+                    <div className="Pen">
+                       <img className="PenBody" src={pen}></img>
+                    </div>
                  
                   </div>
             </div>
