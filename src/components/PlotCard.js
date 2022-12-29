@@ -1,6 +1,7 @@
 import React from "react";
 import './PlotCard.css';
-import pen from '../assets/pen.svg'
+import pen from '../assets/pen.svg';
+import PlotCardForm from './PlotsCardForm.js';
 
 class PlotCard extends React.Component {
 
@@ -32,7 +33,8 @@ class PlotCard extends React.Component {
     openModal =  () => {
     
         this.setState({
-            showModal : true
+            showModal : true,
+            showMore: false
         })
     }
 
@@ -41,7 +43,12 @@ class PlotCard extends React.Component {
             showModal : false
         } )
     }
-
+    handleToggle = () => {
+        this.setState(prevState => ({
+          showMore: !prevState.showMore
+        }));
+      };
+    
  handleChangePlotAvailability = async () => {
    
   await  this.props.changePlotAvailability(this.props.PlotNum);
@@ -51,6 +58,7 @@ class PlotCard extends React.Component {
     render(){
         const status = this.props.Available? <div className="available">Available</div>  : <div className="sold">Sold</div>
         const PlotcardClass = "PlotCard";
+        const PlotsCardF = this.state.showMore? <PlotCardForm></PlotCardForm> : '';
         // const request =<div className="requestButton" onClick={this.handleChangePlotAvailability}>{this.props.buttonText}</div> 
         const request =      <div className="switch"   onClick={this.handleChanged}>
         <input
@@ -79,11 +87,12 @@ class PlotCard extends React.Component {
 
                     {request}
 
-                    <div className="Pen">
+                    <div className="Pen" onClick={this.handleToggle}>
                        <img className="PenBody" src={pen}></img>
                     </div>
                  
                   </div>
+                  {PlotsCardF}
             </div>
             </> 
         );
