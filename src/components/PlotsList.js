@@ -135,6 +135,29 @@ makeSearch = (g) => {
     
      }
 
+     changePlotData = async (plotNum,newFacing,newDimension,newSize) => {
+
+      // this.setState({
+      //   isLoading : true
+      // })
+            var tempPlotsData = this.state.plotsMapListData.map((plotObj)=>{
+                if(plotObj.name.localeCompare(plotNum) === 0)
+                {
+                  return {...plotObj, facing : newFacing, dimension : newDimension, size : newSize  }
+                } 
+                return plotObj;
+            })
+
+            var A = {
+                'plots' : [...tempPlotsData]
+            }
+            console.log(A);
+
+          await plotsDataServices.updatePlotsData('jmsdc1RhDPrwoFBa7yZC',A);
+          this.getPlotsData();
+    
+     }
+
 
 
 
@@ -154,7 +177,7 @@ makeSearch = (g) => {
                     <div className="search"> <input  autoComplete="off" type="search" name="search" id="search" value={this.state.search} placeholder="search your plot number" onChange={this.handleSearch}></input>    </div>
                 
                 <> {this.state.tempPlotsMapListData.map((v)=>{
-              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available}  changePlotAvailability={this.changePlotAvailability}  ></PlotCard>
+              return <PlotCard PlotNum= {v.name} Facing={v.facing} Available={v.available} Size={v.size} Dimension={v.dimension}  changePlotAvailability={this.changePlotAvailability} changePlotData={this.changePlotData} getPlotsData={this.getPlotsData} plotsMapListData={this.state.plotsMapListData}></PlotCard>
        })}</>
                 </div>
             </div>

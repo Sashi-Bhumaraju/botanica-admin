@@ -15,6 +15,7 @@
     /* flex-direction: row; */
     /* height: 40px; */
     margin: 1px 2px;
+  
  
 
 }
@@ -171,6 +172,7 @@
     align-items: center;
     /* background-color: red; */
     margin: 0px 5px; 
+    cursor: pointer;
   }
 
   .PenBody {

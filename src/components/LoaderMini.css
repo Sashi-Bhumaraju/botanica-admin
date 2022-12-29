@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 999999;
   }
 
@@ -28,7 +28,6 @@
   }
 
   .LoaderImage{
-    position: absolute;
     width: 140px;
   }
   
