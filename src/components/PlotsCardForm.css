@@ -10,7 +10,7 @@
     z-index: -999;
     overflow: hidden ;
     border-right: 0.1px#1DA1F2 solid;
-    animation: slideDown 0.2s  ease-in-out ;
+    /* animation: slideDown 0.2s  ease-in-out ; */
 }
 
 @keyframes slideDown {
