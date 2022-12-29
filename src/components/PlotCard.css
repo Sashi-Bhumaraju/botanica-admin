@@ -67,41 +67,9 @@
     font-size: 15px;
 }
 
-.plotElement{
-    /* width: 25%; */
-    /* margin-bottom: 18px; */
-   
-}
-.PlotElementHeading{
-    font-size: 13px;
-    letter-spacing: 0.8px;
-    /* text-transform: uppercase; */
-    /* text-align: left; */
-}
-
-.PlotElementBody{
-    font-size: 1rem;
-    letter-spacing: 0.8px;
-    /* text-transform: uppercase; */
-    /* text-align: left; */
-    color: #ffd56d;
-   
-}
 
 .plotStausElement{
-    /* margin: 20px; */
-    /* margin-bottom: 18px; */
-    width: 25%;
-   
-   
-}
-.PlotStatusElementHeading{
-    font-size: 13px;
-    letter-spacing: 0.8px;
-    /* text-transform: uppercase; */
-    /* text-align: left; */
-
-   
+    width: 60%;
 }
 
 .PlotStatusElementBody{
@@ -111,6 +79,7 @@
     text-align: left;
     font-weight: 100;
     letter-spacing: 1px;
+    margin: 0px 20px;
 
 }
 
@@ -124,67 +93,88 @@
  
 }
 
-.requestButton {
-    
-    background: #1DA1F2;
-    /* background-color: white; */
-    color: rgb(0, 0, 0);
-    border: 0;
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    /* height: 30px; */
+    margin: 0px 30px;
+   
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+   
+   
+  }
+  
+  .slider {
+    border-radius: 20px;
+    position: absolute;
     cursor: pointer;
-    height: 10px;
-    padding: 0px 5px;
-    height: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 22px;
+    width: 45px;
+  }
+  
+  .slider:before {
+    border-radius: 20px;
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #1DA1F2;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+  .Pen {
+    width: 10%;
+    margin: 0px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 20px;
-    float: right;
-    font-size: 12px;
-
-
-
-  text-align: center;
-  text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 20%;  
-  will-change: transform;
-  width: 110px;
-  height: 30px;
-  margin: 0px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 60px;
-  letter-spacing: 1px;
-  font-weight: 600;
-
-
-}
-.requestButton:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-  }
-/* @media screen and (max-width: 1125px) {
-    .PlotCard{
-        height: 250px;
-        display: flex;
-        flex-direction: row;
-        overflow: scroll;
-        overflow-x: hidden;
-    }
-  } */
-  /* @media screen and (max-width: 400px) {
-    .image-container{
-
-      width: calc(100vw - 50px);
-  
-  }
-  .container {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* background-color: red; */
+     
   }
 
-  } */
+  .PenBody {
+    width: 24px;
+   height: 24px;
+     
+  }
