@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/botanica-admin/static/css/main.3be49222.css",
+    "main.css": "/botanica-admin/static/css/main.a2b8991a.css",
     "main.js": "/botanica-admin/static/js/main.d5f99954.js",
     "static/js/787.3ce4cc4d.chunk.js": "/botanica-admin/static/js/787.3ce4cc4d.chunk.js",
     "static/media/showcase.png": "/botanica-admin/static/media/showcase.ab3834ce403128b0b73b.png",
@@ -9,12 +9,12 @@
     "index.html": "/botanica-admin/index.html",
     "static/media/delete.svg": "/botanica-admin/static/media/delete.0916a6869692f38721ea91ccd900752b.svg",
     "static/media/burger.svg": "/botanica-admin/static/media/burger.81dde41c1e6b6787df1065f65a2066d3.svg",
-    "main.3be49222.css.map": "/botanica-admin/static/css/main.3be49222.css.map",
+    "main.a2b8991a.css.map": "/botanica-admin/static/css/main.a2b8991a.css.map",
     "main.d5f99954.js.map": "/botanica-admin/static/js/main.d5f99954.js.map",
     "787.3ce4cc4d.chunk.js.map": "/botanica-admin/static/js/787.3ce4cc4d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3be49222.css",
+    "static/css/main.a2b8991a.css",
     "static/js/main.d5f99954.js"
   ]
 }

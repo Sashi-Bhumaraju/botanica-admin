@@ -46,7 +46,7 @@
     /* border-radius: 50%; */
     height: 100%;
     width: 25%;
-    border-right: 3px solid yellow
+    border-right: 3px solid  #2196F3;
     
 }
 
@@ -123,17 +123,17 @@
     background-color:#ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    height: 22px;
-    width: 45px;
+    height: 16px;
+    width: 40px;
   }
   
   .slider:before {
     border-radius: 20px;
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
-    left: 2px;
+    height: 12px;
+    width: 12px;
+    left: 3px;
     bottom: 2px;
     background-color: white;
     -webkit-transition: .4s;
@@ -177,7 +177,7 @@
 
   .PenBody {
     /* margin: 0px 20px; */
-    width: 24px;
-   height: 24px;
+    width: 19px;
+   height: 19px;
      
   }
